@@ -2,8 +2,7 @@ package com.leantech.prueba.model;
 
 public class Employee {
 
-
-	private Integer id;
+	private int id;
 	
 	private String name;
 	
@@ -15,7 +14,7 @@ public class Employee {
 
 	private Person person;
 	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 

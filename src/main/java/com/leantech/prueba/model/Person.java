@@ -1,5 +1,6 @@
 package com.leantech.prueba.model;
 
+
 public class Person {
 
 	private int id;

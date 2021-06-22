@@ -25,14 +25,9 @@ public class EmployeeController {
 	@GetMapping(value = "/employee/list")
 	private ResponseEntity<Object> getEmployees (@RequestParam(defaultValue = "") String pos, @RequestParam(defaultValue = "") String name) {
 		
-		responseObject = new Response();
-		
 		List<Employee> response = service.getEmployees(pos, name);
 		
-		responseObject.setCode("OK");
-		responseObject.setObject(response);
-		
-		return ResponseEntity.ok(responseObject);
+		return ResponseEntity.ok(response);
 	}
 	
 	@PostMapping(value = "/employee/create")
@@ -53,7 +48,7 @@ public class EmployeeController {
 		
 		responseObject = new Response();
 		
-		if (employee.getId() != null) {
+		if (employee.getId() != 0) {
 			Integer rowsAffected = service.updateEmployee(employee);
 			
 			responseObject.setCode("OK");
