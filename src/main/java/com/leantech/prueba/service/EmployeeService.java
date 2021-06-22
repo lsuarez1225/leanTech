@@ -16,20 +16,7 @@ public class EmployeeService {
 	
 	public List<Employee> getEmployees (String position, String name) {
 		
-		if (position == "" && name == "") {
-			//return repository.getEmployees();
-		}
-		else if (position == "" && name == "") {
-			//return repository.findEmployees(position, name);
-		}
-		else if (position == "" && name == "") {
-			//return repository.findEmployees(position, name);			
-		}
-		else {
-			//return repository.findEmployees(position, name);
-			//return null;
-		}
-		return repository.getEmployees();
+		return repository.getEmployeesByPosName(position, name);
 	}
 	
 	public Integer saveEmployee (Employee employee) {
