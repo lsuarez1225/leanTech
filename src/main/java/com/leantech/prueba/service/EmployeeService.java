@@ -21,7 +21,7 @@ public class EmployeeService {
 	
 	public Integer saveEmployee (Employee employee) {
 
-		return repository.createEmployee(employee.getName(), employee.getPerson_id(), employee.getPosition_id());		
+		return repository.createEmployee(employee);		
 	}
 	
 	public Integer updateEmployee (Employee employee) {

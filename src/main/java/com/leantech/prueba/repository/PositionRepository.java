@@ -28,7 +28,7 @@ public class PositionRepository {
 	public List<Position> getEmployeesByPosition () {
 		
 		// Query for getting all positions with their employees and persons.
-		String query = "SELECT a.id as position_id, a.name as position_name, b.position_id as position_id, b.id as employee_id, b.name as employee_name, b.salary as employee_salary, c.id as person_id, c.name as person_name, c.lastName as person_lastname, c.address as person_address, c.cellphone as person_cellphone, c.cityName as person_cityname FROM POSITION a LEFT JOIN EMPLOYEE b ON (b.POSITION_ID = a.ID) LEFT JOIN PERSON c ON (c.id = b.person_id)";
+		String query = "SELECT a.id as position_id, a.name as position_name, b.position_id as position_id, b.id as employee_id, b.name as employee_name, b.salary as employee_salary, c.id as person_id, c.name as person_name, c.lastName as person_lastname, c.address as person_address, c.cellphone as person_cellphone, c.cityName as person_cityname FROM POSITION a LEFT JOIN EMPLOYEE b ON (b.POSITION_ID = a.ID) LEFT JOIN PERSON c ON (c.id = b.person_id) ORDER BY a.id, b.salary DESC";
 		
 		return template.query(query, new ResultSetExtractor<List<Position>>() {
 

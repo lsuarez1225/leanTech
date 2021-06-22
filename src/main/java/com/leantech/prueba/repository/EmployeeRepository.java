@@ -36,18 +36,18 @@ public class EmployeeRepository {
 		return employees;
 	}
 	
-	public Integer createEmployee (String name, Integer person, Integer position) {
+	public Integer createEmployee (Employee employee) {
 		
-		String query = "INSERT INTO employee (name, person_id, position_id) VALUES (?, ?, ?) ";
+		String query = "INSERT INTO employee (name, person_id, position_id, salary) VALUES (?, ?, ?, ?) ";
 		
-		return template.update(query, name, person, position);
+		return template.update(query, employee.getName(), employee.getPerson_id(), employee.getPosition_id(), employee.getSalary());
 	}
 	
 	public Integer updateEmployee (Employee employee) {
 		
-		String query = "UPDATE EMPLOYEE SET name = ?, person_id = ?, position_id = ? WHERE id = ?";
+		String query = "UPDATE EMPLOYEE SET name = ?, person_id = ?, position_id = ?, salary = ? WHERE id = ?";
 		
-		return template.update(query, employee.getName(), employee.getPerson_id(), employee.getPosition_id(), employee.getId());
+		return template.update(query, employee.getName(), employee.getPerson_id(), employee.getPosition_id(), employee.getSalary(), employee.getId());
 	}
 	
 	public Integer deleteEmployee (Integer id) {
